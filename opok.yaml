@@ -1,33 +1,33 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
 proxies:
 # ===============================================
-   ##-> RAKITAN BugHost ALL OPSEL  <-##
+   ##-> RAKITAN BugHost AxisNET GAME  <-##
 # ===============================================
-- name: OPOK SATU
+- name: IDC OPOK 
   type: trojan
-  server: 104.15.128.79
+  server: 162.159.128.79
   port: 443
-  password: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+  password: 900
   udp: true
-  sni: akun.barokahnet.my.id
+  sni: idc.barokahnet.my.id
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: akun.barokahnet.my.id
+      Host: idc.barokahnet.my.id
 # ===============================================
-- name: OPOK DUA
+- name: ATHA OPOK
   type: trojan
-  server: 104.15.128.79
+  server: 162.159.128.79
   port: 443
-  password: xxxxxxxxxxxxxxxxxxxxxxxxxxx
+  password: 900
   udp: true
-  sni: akun.barokahnet.my.id
+  sni: atha.barokahnet.my.id
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: akun.barokahnet.my.id
+      Host: atha.barokahnet.my.id
 # ===============================================
