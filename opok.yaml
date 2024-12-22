@@ -1,0 +1,33 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost AxisNET GAME  <-##
+# ===============================================
+- name: IDC OPOK 
+  type: trojan
+  server: 162.159.128.79
+  port: 443
+  password: 900
+  udp: true
+  sni: idc.barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: idc.barokahnet.my.id
+# ===============================================
+- name: ATHA OPOK
+  type: trojan
+  server: 162.159.128.79
+  port: 443
+  password: 900
+  udp: true
+  sni: atha.barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: atha.barokahnet.my.id
+# ===============================================
