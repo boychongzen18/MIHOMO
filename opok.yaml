@@ -2,7 +2,7 @@
 proxy-providers:
   "ALL PAKET\U0001F4B5":
     type: file
-    path: "./proxy_provider/opok.yaml"
+    path: "./proxy_provider/akun.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
