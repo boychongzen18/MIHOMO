@@ -1,0 +1,115 @@
+---
+proxy-providers:
+  "\U0001F4B5 BYU \U0001F4B5":
+    type: file
+    path: "./proxy_provider/e5372s.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10
+  "\U0001F4B5 XL \U0001F4B5":
+    type: file
+    path: "./proxy_provider/5577.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10
+proxy-groups:
+- name: "\U0001F680 5577 \U0001F680"
+  type: url-test
+  disable-udp: false
+  use:
+  - "\U0001F4B5 XL \U0001F4B5"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: "\U0001F680 e5372s \U0001F680"
+  type: url-test
+  disable-udp: false
+  use:
+  - "\U0001F4B5 BYU \U0001F4B5"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: "\U0001F4B5 TUNNELING \U0001F4B5"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - "NO IKLAN\U0001F4B5"
+  - "\U0001F680 5577 \U0001F680"
+  - "\U0001F680 e5372s \U0001F680"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: "NO IKLAN\U0001F4B5"
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  use:
+  - "\U0001F4B5 BYU \U0001F4B5"
+  - "\U0001F4B5 XL \U0001F4B5"
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+unified-delay: true
+external-controller: 0.0.0.0:1080
+secret: RULES
+bind-address: "*"
+external-ui: "/etc/mihomo/run/ui"
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+  - 192.168.8.1
+  - dhcp://"eth1"
+  default-nameserver:
+  - 192.168.8.1
+  prefer-h3: false
+ipv6: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+rules:
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
+- RULE-SET,DIRECT,DIRECT
+- RULE-SET,REJECT,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- MATCH,GLOBAL
+rule-providers:
+  REJECT:
+    type: file
+    behavior: classical
+    path: "./rule_provider/REJECT.yaml"
+  DIRECT:
+    type: file
+    behavior: classical
+    path: "./rule_provider/DIRECT.yaml"
+geodata-mode: false
+geodata-loader: memconservative
+tcp-concurrent: false
+disable-keep-alive: true
+find-process-mode: 'off'
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+  - tcp://any:53
+  gso: true
+  gso-max-size: 65536
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
