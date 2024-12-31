@@ -59,7 +59,7 @@ log-level: silent
 allow-lan: true
 unified-delay: true
 external-controller: 0.0.0.0:1080
-secret: RULES
+secret: boychongzen
 bind-address: "*"
 external-ui: "/etc/mihomo/run/ui"
 dns:
@@ -68,9 +68,12 @@ dns:
   enhanced-mode: redir-host
   listen: 0.0.0.0:7874
   nameserver:
+  - 192.168.7.1
+  - dhcp://"wwan0"
   - 192.168.8.1
   - dhcp://"eth1"
   default-nameserver:
+  - 192.168.7.1
   - 192.168.8.1
   prefer-h3: false
 ipv6: false
