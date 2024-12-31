@@ -1,96 +1,19 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
 proxies:
 # ===============================================
-   ##-> RAKITAN BugHost TSEL ILMUPEDIA  <-##
+   ##-> RAKITAN BugHost XL COMBO BASIC  <-##
 # ===============================================
 - name: TROJAN 443
   type: trojan
-  server: 104.26.7.171
+  server: ava.game.naver.com
   port: 443
-  password: 900
+  password: makan
   udp: true
-  sni: atha.barokahnet.my.id
+  sni: sg5.dklongtong.xyz
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: atha.barokahnet.my.id
+      Host: sg5.dklongtong.xyz
 # ===============================================
-- name: GRPC
-  type: trojan
-  server: 104.26.7.171
-  port: 443
-  password: grpc1
-  udp: true
-  sni: zakyid.dklongtong.xyz
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: Trojan-GRPC
-# ===============================================
-- name: VLESS Non TLS
-  server: 104.26.7.171
-  port: 80
-  type: vless
-  uuid: b3de26e8-e835-4548-955b-594d5355ff80
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  servername: zakyid.dklongtong.xyz
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: zakyid.dklongtong.xyz
-# ===============================================
-- name: VLESS TLS
-  type: vless
-  server: 104.26.7.171
-  port: 443
-  uuid: b3de26e8-e835-4548-955b-594d5355ff80
-  udp: true
-  skip-cert-verify: true
-  tls: true
-  servername: zakyid.dklongtong.xyz
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: zakyid.dklongtong.xyz
-#=================================================
-- name: VMESS Non TLS
-  type: vmess
-  server: 104.26.7.171
-  port: 80
-  uuid: e504b3a5-be27-4355-a859-3050bc9b187c
-  alterId: 0
-  cipher: auto
-  udp: false
-  skip-cert-verify: true
-  tls: false
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: zakyid.dklongtong.xyz
-# =====================================
-- name: VMESS 443
-  type: vmess
-  server: 104.26.7.171
-  port: 443
-  uuid: e504b3a5-be27-4355-a859-3050bc9b187c
-  alterId: 0
-  cipher: auto
-  udp: false
-  skip-cert-verify: true
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: zakyid.dklongtong.xyz
-# =====================================
-
-
-  
