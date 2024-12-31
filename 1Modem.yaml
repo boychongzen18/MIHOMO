@@ -37,7 +37,7 @@ unified-delay: true
 external-controller: 0.0.0.0:1080
 secret: boychongzen
 bind-address: "*"
-external-ui: "/usr/share/openclash/ui"
+external-ui: "/etc/mihomo/run/ui"
 dns:
   enable: true
   ipv6: false
