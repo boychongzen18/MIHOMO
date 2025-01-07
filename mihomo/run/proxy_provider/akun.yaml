@@ -1,15 +1,14 @@
 proxies:
-- name: IDC LINE HENDRA
+- name: ATHA 
   type: trojan
-  server: bugnya 
+  server: poc-cdn-flr.visionplus.id
   port: 443
-  password: password
+  password: 1hari
   udp: true
-  sni: akunnya 
+  sni: zakyid.dklongtong.xyz
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: akunnya 
-
+      Host: zakyid.dklongtong.xyz
