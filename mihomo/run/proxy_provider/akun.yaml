@@ -1,14 +1,14 @@
 proxies:
-- name: ATHA 
+- name: TJ
   type: trojan
-  server: poc-cdn-flr.visionplus.id
+  server: bugnya 
   port: 443
-  password: 1hari
+  password: xxxxxc
   udp: true
-  sni: zakyid.dklongtong.xyz
+  sni: akunnya 
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: zakyid.dklongtong.xyz
+      Host: akunnya 
