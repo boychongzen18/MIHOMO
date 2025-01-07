@@ -1,8 +1,4 @@
-# RAKITAN CONFIG Boychongzen aka Xroot
 proxies:
-# ===============================================
-   ##-> RAKITAN BugHost TSEL OPOK  <-##
-# ===============================================
 - name: IDC LINE HENDRA
   type: trojan
   server: bugnya 
@@ -16,4 +12,4 @@ proxies:
     path: /trojan
     headers:
       Host: akunnya 
-# ===============================================
+
