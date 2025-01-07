@@ -1,1 +1,34 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost TSEL OPOK  <-##
+# ===============================================
+- name: OPOK SATU
+  type: trojan
+  server: 104.15.128.90
+  port: 443
+  password: xxxxxxxxxxxxxxx
+  udp: true
+  sni: barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: barokahnet.my.id
+# ===============================================
+- name: OPOK DUA
+  type: trojan
+  server: 104.15.128.90
+  port: 443
+  password: xxxxxxxxxxxxxxx
+  udp: true
+  sni: barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: barokahnet.my.id
+# ===============================================
 
