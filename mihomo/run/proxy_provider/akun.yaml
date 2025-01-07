@@ -5,15 +5,15 @@ proxies:
 # ===============================================
 - name: IDC LINE HENDRA
   type: trojan
-  server: account.pmang.game.naver.com
+  server: bugnya 
   port: 443
-  password: bangboy
+  password: password
   udp: true
-  sni: id.hendravps.my.id
+  sni: akunnya 
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: id.hendravps.my.id
+      Host: akunnya 
 # ===============================================
