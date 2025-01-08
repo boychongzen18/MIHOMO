@@ -5,7 +5,7 @@ proxies:
 # ===============================================
 - name: VMESS 443
   type: vmess
-  server: 0paket.mikocok.my.id
+  server: 104.17.3.81
   port: 443
   uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
