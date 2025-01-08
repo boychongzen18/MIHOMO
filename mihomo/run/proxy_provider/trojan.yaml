@@ -5,7 +5,7 @@ proxies:
 # ===============================================
 - name: TROJAN HOWDY
   type: trojan
-  server: app-stg.gopay.co.id
+  server: 104.26.7.171
   port: 443
   password: 441275f0-cd98-11ef-baf1-1239d0255272
   udp: true
