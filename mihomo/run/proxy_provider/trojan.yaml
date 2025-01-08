@@ -3,17 +3,17 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: IDC ILPED 
+- name: OPOK
   type: trojan
-  server: 104.26.7.171
+  server: bugnya 
   port: 443
-  password: 900
+  password: xxxxx
   udp: true
-  sni: zakyid3.dklongtong.xyz
+  sni: akunnya 
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: zakyid3.dklongtong.xyz
+      Host: akunnya 
 # ===============================================
