@@ -3,17 +3,17 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: TROJAN HOWDY
+- name: IDC ILPED 
   type: trojan
   server: 104.26.7.171
   port: 443
-  password: 441275f0-cd98-11ef-baf1-1239d0255272
+  password: 900
   udp: true
-  sni: sg2.6n6.net
+  sni: idc.barokahnet.my.id
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /howdy
+    path: /trojan
     headers:
-      Host: sg2.6n6.net
+      Host: idc.barokahnet.my.id
 # ===============================================
