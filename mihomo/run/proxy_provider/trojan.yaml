@@ -9,11 +9,11 @@ proxies:
   port: 443
   password: 900
   udp: true
-  sni: idc.barokahnet.my.id
+  sni: zakyid3.dklongtong.xyz
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: idc.barokahnet.my.id
+      Host: zakyid3.dklongtong.xyz
 # ===============================================
