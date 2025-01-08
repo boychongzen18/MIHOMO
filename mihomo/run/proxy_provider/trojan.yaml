@@ -5,7 +5,7 @@ proxies:aa
 # ===============================================
 - name: VMESS Non TLS
   type: vmess
-  server: app-stg.gopay.co.idqq
+  server: 104.26.7.171aaa
   port: 80
   uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
