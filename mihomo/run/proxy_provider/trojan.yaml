@@ -1,5 +1,5 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
-proxies:aa
+proxies:
 # ===============================================
      ##->qq RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
@@ -17,5 +17,5 @@ proxies:aa
   ws-opts:
     path: /vmess
     headers:
-      Host: pro.kopralstore.my.idaa
+      Host: pro.kopralstore.my.id
 # ===============================================
