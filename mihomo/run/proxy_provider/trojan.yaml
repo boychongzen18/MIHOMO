@@ -5,7 +5,7 @@ proxies:
 # ===============================================
 - name: VMESS 443
   type: vmess
-  server: 104.14.8.05
+  server: community.teamviewer.com
   port: 443
   uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
