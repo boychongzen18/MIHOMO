@@ -3,7 +3,7 @@ proxies:
 # ===============================================
      ##->qq RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: VMESS 443
+- name: BUGHOST OPOK
   type: vmess
   server: community.teamviewer.com
   port: 443
