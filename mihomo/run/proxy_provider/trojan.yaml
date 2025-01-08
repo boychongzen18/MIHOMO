@@ -3,17 +3,35 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: OPOK
-  type: trojan
-  server: bugnya 
-  port: 443
-  password: xxxxx
-  udp: true
-  sni: akunnya 
+- name: VMESS Non TLS
+  type: vmess
+  server: 104.10.100.00
+  port: 80
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  alterId: 0
+  cipher: auto
+  udp: false
   skip-cert-verify: true
+  tls: false
   network: ws
   ws-opts:
-    path: /trojan
+    path: /vmess
     headers:
-      Host: akunnya 
+      Host: barokahnet.my.id
+# =====================================
+- name: VMESS 443
+  type: vmess
+  server: 104.10.100.00
+  port: 443
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  alterId: 0
+  cipher: auto
+  udp: false
+  skip-cert-verify: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: barokahnet.my.id
 # ===============================================
