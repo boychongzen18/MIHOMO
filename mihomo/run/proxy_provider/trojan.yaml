@@ -1,13 +1,85 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
 proxies:
 # ===============================================
-     ##->qq RAKITAN BugHost ALL OPSEL  <-##
+     ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: BUGHOST OPOK
-  type: vmess
-  server: community.teamviewer.com
+- name: TROJAN 443
+  type: trojan
+  server: 104.10.100.00
   port: 443
-  uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
+  password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  udp: true
+  sni: barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: barokahnet.my.id
+# ===============================================
+- name: GRPC OPOK
+  type: trojan
+  server: 104.10.100.00
+  port: 443
+  password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  udp: true
+  sni: barokahnet.my.id
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: Trojan-GRPC
+# ===============================================
+- name: VLESS Non TLS
+  server: 104.10.100.00
+  port: 80
+  type: vless
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: barokahnet.my.id
+# ===============================================
+- name: VLESS TLS
+  type: vless
+  server: 104.10.100.00
+  port: 443
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: barokahnet.my.id
+#=================================================
+- name: VMESS Non TLS
+  type: vmess
+  server: 104.10.100.00
+  port: 80
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  alterId: 0
+  cipher: auto
+  udp: false
+  skip-cert-verify: true
+  tls: false
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: barokahnet.my.id
+# =====================================
+- name: VMESS 443
+  type: vmess
+  server: 104.10.100.00
+  port: 443
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   alterId: 0
   cipher: auto
   udp: false
@@ -17,5 +89,5 @@ proxies:
   ws-opts:
     path: /vmess
     headers:
-      Host: pro.kopralstore.my.id
-# ===============================================
+      Host: barokahnet.my.id
+# =====================================
