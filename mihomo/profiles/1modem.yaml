@@ -2,19 +2,29 @@
 proxy-providers:
   "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘":
     type: file
-    path: "./proxy_provider/trojan.yaml"
+    path: "./proxy_provider/saweran.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 50
+  "â–‘Gâ–‘Iâ–‘Tâ–‘Hâ–‘Uâ–‘Bâ–‘":
+    type: http
+    path: "./proxy_provider/opok.yaml"
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/proxy_provider/trojan.yaml
+    interval: 100
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10
 proxy-groups:
-- name: "â– â–‚  \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+- name: "â– â–‚ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
     â–‚ â–"
   type: load-balance
   strategy: round-robin
   disable-udp: false
   use:
   - "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘"
+  - "â–‘Gâ–‘Iâ–‘Tâ–‘Hâ–‘Uâ–‘Bâ–‘"
   url: http://www.gstatic.com/generate_204
   interval: '50'
 - name: "â–‘â–’â–“â–ˆ \U0001D539\U0001D55D\U0001D560\U0001D554\U0001D55C \U0001D540\U0001D55C\U0001D55D\U0001D552\U0001D55F
@@ -25,6 +35,7 @@ proxy-groups:
   - REJECT
   use:
   - "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘"
+  - "â–‘Gâ–‘Iâ–‘Tâ–‘Hâ–‘Uâ–‘Bâ–‘"
 redir-port: 7892
 tproxy-port: 7895
 port: 7890
@@ -46,8 +57,8 @@ dns:
   nameserver:
   - 192.168.8.1
   - 192.168.7.1
-  - dhcp://"wwan0"
   - dhcp://"eth1"
+  - dhcp://"wwan0"
   default-nameserver:
   - 192.168.8.1
   - 192.168.7.1
