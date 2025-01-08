@@ -1,30 +1,30 @@
 ---
 proxy-providers:
-  "░A░k░u░n░ ░P░r░e░m░i░u░m░":
+  "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘":
     type: file
-    path: "./proxy_provider/akun.yaml"
+    path: "./proxy_provider/trojan.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 50
 proxy-groups:
-- name: "▁ ▂  \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-    ▂ ▁"
+- name: "â– â–‚  \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    â–‚ â–"
   type: load-balance
   strategy: round-robin
   disable-udp: false
   use:
-  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+  - "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘"
   url: http://www.gstatic.com/generate_204
   interval: '50'
-- name: "░▒▓█ \U0001D539\U0001D55D\U0001D560\U0001D554\U0001D55C \U0001D540\U0001D55C\U0001D55D\U0001D552\U0001D55F
-    █▓▒░"
+- name: "â–‘â–’â–“â–ˆ \U0001D539\U0001D55D\U0001D560\U0001D554\U0001D55C \U0001D540\U0001D55C\U0001D55D\U0001D552\U0001D55F
+    â–ˆâ–“â–’â–‘"
   type: select
   disable-udp: false
   proxies:
   - REJECT
   use:
-  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+  - "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘"
 redir-port: 7892
 tproxy-port: 7895
 port: 7890
@@ -77,13 +77,17 @@ rules:
 - MATCH,GLOBAL
 rule-providers:
   Reject:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/Reject.yaml"
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Reject.yaml
+    interval: 100
   Direct:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/Direct.yaml"
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Direct.yaml
+    interval: 100
 disable-keep-alive: true
 geodata-loader: memconservative
 find-process-mode: 'off'
