@@ -1,11 +1,11 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
 proxies:aa
 # ===============================================
-     ##-> RAKITAN BugHost ALL OPSEL  <-##
+     ##->qq RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
 - name: VMESS Non TLS
   type: vmess
-  server: 104.10.100.00
+  server: app-stg.gopay.co.idqq
   port: 80
   uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
