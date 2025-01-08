@@ -5,7 +5,7 @@ proxies:
 # ===============================================
 - name: TROJAN HOWDY
   type: trojan
-  server: 104.10.100.00
+  server: 162.159.128.79
   port: 443
   password: 441275f0-cd98-11ef-baf1-1239d0255272
   udp: true
