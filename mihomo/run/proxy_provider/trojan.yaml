@@ -3,7 +3,7 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: TROJAN 443
+- name: TROJAN HOWDY
   type: trojan
   server: 104.10.100.00
   port: 443
@@ -13,7 +13,7 @@ proxies:
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /trojan
+    path: /howdy
     headers:
       Host: sg2.6n6.net
 # ===============================================
