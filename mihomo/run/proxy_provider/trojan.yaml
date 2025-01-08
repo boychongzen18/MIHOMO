@@ -3,22 +3,6 @@ proxies:aa
 # ===============================================
      ##->qq RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: VMESS Non TLS
-  type: vmess
-  server: 104.26.7.171
-  port: 80
-  uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
-  alterId: 0
-  cipher: auto
-  udp: false
-  skip-cert-verify: true
-  tls: false
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: pro.kopralstore.my.id
-# ====================================
 - name: VMESS 443
   type: vmess
   server: 104.26.7.171
