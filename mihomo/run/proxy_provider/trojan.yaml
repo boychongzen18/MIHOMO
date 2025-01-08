@@ -5,17 +5,17 @@ proxies:
 # ===============================================
 - name: TROJAN 443
   type: trojan
-  server: 104.10.100.00
+  server: 104.26.7.171
   port: 443
-  password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  password: bangboy
   udp: true
-  sni: barokahnet.my.id
+  sni: zakyid.hendravps.my.id
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: barokahnet.my.id
+      Host: zakyid.hendravps.my.id
 # ===============================================
 - name: GRPC OPOK
   type: trojan
