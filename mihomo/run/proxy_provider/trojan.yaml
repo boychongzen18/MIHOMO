@@ -1,5 +1,5 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
-proxies:
+proxies:aa
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
@@ -7,7 +7,7 @@ proxies:
   type: vmess
   server: 104.10.100.00
   port: 80
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
   cipher: auto
   udp: false
@@ -17,13 +17,13 @@ proxies:
   ws-opts:
     path: /vmess
     headers:
-      Host: barokahnet.my.id
-# =====================================
+      Host: pro.kopralstore.my.id
+# ====================================
 - name: VMESS 443
   type: vmess
   server: 104.10.100.00
   port: 443
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  uuid: e54c29c4-b5ee-4980-b0ba-de3860256fb8
   alterId: 0
   cipher: auto
   udp: false
@@ -33,5 +33,5 @@ proxies:
   ws-opts:
     path: /vmess
     headers:
-      Host: barokahnet.my.id
+      Host: pro.kopralstore.my.idaa
 # ===============================================
