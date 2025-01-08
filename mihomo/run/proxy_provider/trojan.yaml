@@ -7,15 +7,15 @@ proxies:
   type: trojan
   server: 104.10.100.00
   port: 443
-  password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  password: 441275f0-cd98-11ef-baf1-1239d0255272
   udp: true
-  sni: barokahnet.my.id
+  sni: sg2.6n6.net
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: barokahnet.my.id
+      Host: sg2.6n6.net
 # ===============================================
 - name: GRPC OPOK
   type: trojan
