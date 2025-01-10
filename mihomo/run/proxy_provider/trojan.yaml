@@ -63,7 +63,7 @@ proxies:
   type: vmess
   server: 104.10.100.00
   port: 80
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  uuid: f9c0a790-cf61-11ef-9215-1239d0255272
   alterId: 0
   cipher: auto
   udp: false
@@ -73,13 +73,13 @@ proxies:
   ws-opts:
     path: /vmess
     headers:
-      Host: barokahnet.my.id
+      Host: sg3.socifiles.com
 # =====================================
 - name: VMESS 443
   type: vmess
   server: 104.10.100.00
   port: 443
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  uuid: f9c0a790-cf61-11ef-9215-1239d0255272
   alterId: 0
   cipher: auto
   udp: false
@@ -89,5 +89,5 @@ proxies:
   ws-opts:
     path: /vmess
     headers:
-      Host: barokahnet.my.id
+      Host: sg3.socifiles.com
 # =====================================
