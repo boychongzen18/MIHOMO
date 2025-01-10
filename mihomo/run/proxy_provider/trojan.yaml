@@ -59,7 +59,7 @@ proxies:
     headers:
       Host: barokahnet.my.id
 #=================================================
-- name: VMESS Non TLS
+- name: VMESS Non TLS (2025-01-17)
   type: vmess
   server: 104.10.100.00
   port: 80
@@ -75,7 +75,7 @@ proxies:
     headers:
       Host: sg3.socifiles.com
 # =====================================
-- name: VMESS 443
+- name: VMESS 443 (2025-01-17)
   type: vmess
   server: 104.10.100.00
   port: 443
