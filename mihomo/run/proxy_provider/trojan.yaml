@@ -7,14 +7,14 @@ proxies:
   type: vless
   server: 162.159.128.79
   port: 443
-  uuid: hendravls
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   udp: true
   skip-cert-verify: true
   tls: true
-  servername: ava.game.naver.com.id2.hendravps.my.id
+  servername: bughost.com.barokahnet.my.id
   network: ws
   ws-opts:
     path: /vless
     headers:
-      Host: ava.game.naver.com.id2.hendravps.my.id
+      Host: bughost.com.barokahnet.my.id
 #==============================================
