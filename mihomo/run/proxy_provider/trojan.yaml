@@ -59,6 +59,21 @@ proxies:
     headers:
       Host: barokahnet.my.id
 #=================================================
+- name: Vless Wilcard
+  type: vless
+  server: 104.18.2.34
+  port: 443
+  uuid: xxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bughost.com.akun.my.id
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: bughost.com.akun.my.id
+#==============================================
 - name: VMESS Non TLS (2025-01-17)
   type: vmess
   server: community.teamviewer.com
