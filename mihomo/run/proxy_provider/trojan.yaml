@@ -1,0 +1,20 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+     ##-> RAKITAN BugHost ALL OPSEL  <-##
+# ===============================================
+- name: OPOK WILCARD Vless
+  type: vless
+  server: 162.159.128.79
+  port: 443
+  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bughost.com.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: bughost.com.barokahnet.my.id
+#==============================================
