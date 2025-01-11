@@ -5,7 +5,7 @@ proxies:
 # ===============================================
 - name: OPOK WILCARD Vless
   type: vless
-  server: community.teamviewer.com
+  server: 162.159.128.79
   port: 443
   uuid: hendravls
   udp: true
