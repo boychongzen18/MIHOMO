@@ -18,3 +18,19 @@ proxies:
     headers:
       Host: bughost.com.barokahnet.my.id
 #==============================================
+- name: sg
+  server: 162.159.128.79
+  port: 443
+  type: vmess
+  uuid: 2d5bc677-beab-4843-b49a-8a36a84f64ab
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: vm.sg.serverkit.pw
+  network: ws
+  ws-opts:
+    path: /v2ray-vmess/tls
+    headers:
+      Host: vm.sg.serverkit.pw
+ #==============================================     
