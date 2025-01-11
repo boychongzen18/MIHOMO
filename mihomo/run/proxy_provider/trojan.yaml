@@ -3,19 +3,19 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: TROJAN 443
+- name: TROJAN 443 & Wilcard
   type: trojan
   server: 104.10.100.00
   port: 443
   password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   udp: true
-  sni: barokahnet.my.id
+  sni: bughost.com.barokahnet.my.id
   skip-cert-verify: true
   network: ws
   ws-opts:
     path: /trojan
     headers:
-      Host: barokahnet.my.id
+      Host: bughost.com.barokahnet.my.id
 # ===============================================
 - name: GRPC OPOK
   type: trojan
@@ -67,12 +67,12 @@ proxies:
   udp: true
   skip-cert-verify: true
   tls: true
-  servername: bughost.com.akun.my.id
+  servername: bughost.com.barokahnet.my.id
   network: ws
   ws-opts:
     path: /vless
     headers:
-      Host: bughost.com.akun.my.id
+      Host: bughost.com.barokahnet.my.id
 #==============================================
 - name: VMESS Non TLS (2025-01-17)
   type: vmess
