@@ -40,3 +40,19 @@ FREE AKUN
       path: /vmws
       headers:
         Host: sg3.socifiles.com
+
+  - name: sg
+    server: sg.serverkit.pw
+    port: 443
+    type: vmess
+    uuid: 2d5bc677-beab-4843-b49a-8a36a84f64ab
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vm.sg.serverkit.pw
+    network: ws
+    ws-opts:
+      path: /v2ray-vmess/tls
+      headers:
+        Host: vm.sg.serverkit.pw
