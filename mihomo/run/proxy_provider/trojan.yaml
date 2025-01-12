@@ -22,15 +22,15 @@ proxies:
   server: 162.159.128.79
   port: 443
   type: vmess
-  uuid: 2d5bc677-beab-4843-b49a-8a36a84f64ab
+  uuid: ab35701f-d9b5-4c48-ab4e-e1af5c0b36be
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: vm.sg.serverkit.pw
+  servername: id1.ubaistore.my.id
   network: ws
   ws-opts:
-    path: /v2ray-vmess/tls
+    path: /vmessws
     headers:
-      Host: vm.sg.serverkit.pw
+      Host: id1.ubaistore.my.id
  #==============================================     
