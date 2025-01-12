@@ -27,10 +27,10 @@ proxies:
   cipher: auto
   tls: true
   skip-cert-verify: true
-  servername: id1.ubaistore.my.id
+  servername: akunnya 
   network: ws
   ws-opts:
     path: /vmessws
     headers:
-      Host: id1.ubaistore.my.id
+      Host: akunnya 
  #==============================================     
