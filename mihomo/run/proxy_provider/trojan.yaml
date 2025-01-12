@@ -19,7 +19,7 @@ proxies:
       Host: bughost.com.barokahnet.my.id
 #==============================================
 - name: INDO 
-  server: 162.159.128.79
+  server: 104.26.7.171
   port: 443
   type: vmess
   uuid: ab35701f-d9b5-4c48-ab4e-e1af5c0b36be
