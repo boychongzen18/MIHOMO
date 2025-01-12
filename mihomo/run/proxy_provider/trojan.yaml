@@ -18,7 +18,7 @@ proxies:
     headers:
       Host: bughost.com.barokahnet.my.id
 #==============================================
-- name: sg
+- name: INDO 
   server: 162.159.128.79
   port: 443
   type: vmess
