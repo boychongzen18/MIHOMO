@@ -1,0 +1,50 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost ALL PAKET <-##
+# ===============================================
+- name: TROJAN MODE PATH WS
+  type: trojan
+  server: BugHost
+  port: 443
+  password: xxxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  sni: akun.barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: ws://BugHost/trojan
+    headers:
+      Host: akun.barokahnet.my.id
+# ===============================================
+- name: SG MODE PATH WSS
+  type: vless
+  server: BugHost
+  port: 443
+  uuid: xxxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bughost.com.akun.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://BugHost/vless
+    headers:
+      Host: bughost.com.akun.barokahnet.my.id
+#==============================================
+- name: IDC MODE PATH WSS
+  type: vless
+  server: BugHost
+  port: 443
+  uuid: xxxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bughost.com.akun.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://BugHost/vless
+    headers:
+      Host: bughost.com.akun.barokahnet.my.id
+#==============================================
+
