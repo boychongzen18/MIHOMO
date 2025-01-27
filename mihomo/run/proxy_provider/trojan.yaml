@@ -3,34 +3,31 @@ proxies:
 # ===============================================
      ##-> RAKITAN BugHost ALL OPSEL  <-##
 # ===============================================
-- name: OPOK WILCARD Vless
-  type: vless
-  server: 162.159.128.79
+proxies:
+- name: TROJAN 1
+  server: 172.67.5.14
   port: 443
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  type: trojan
+  password: 395655f8-944e-4842-a0ca-bd816c4b1e61
+  skip-cert-verify: true
+  sni: id1.servercepat.net
+  network: ws
+  ws-opts:
+    path: /trojan-ws
+    headers:
+      Host: id1.servercepat.net
   udp: true
-  skip-cert-verify: true
-  tls: true
-  servername: bughost.com.barokahnet.my.id
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: bughost.com.barokahnet.my.id
-#==============================================
-- name: INDO 
-  server: 104.28.13.80
+ #==============================================    
+- name: TROJAN 2
+  server: 104.22.5.240
   port: 443
-  type: vmess
-  uuid: ab35701f-d9b5-4c48-ab4e-e1af5c0b36be
-  alterId: 0
-  cipher: auto
-  tls: true
+  type: trojan
+  password: sGWbw5q2nBtPeZ4ziM8J_Q
   skip-cert-verify: true
-  servername: akunnya 
+  sni: ikada.aixxycode.id
   network: ws
   ws-opts:
-    path: /vmessws
+    path: /trojan
     headers:
-      Host: akunnya 
- #==============================================     
+      Host: ikada.aixxycode.id
+  udp: true
