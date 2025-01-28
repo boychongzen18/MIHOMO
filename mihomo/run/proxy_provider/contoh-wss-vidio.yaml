@@ -1,0 +1,111 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost XL VIDIO PATH WSS <-##
+# ===============================================
+- name: TROJAN TLS WSS
+  type: trojan
+  server: 172.67.5.14
+  port: 443
+  password: xxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  sni: vps.barokahnet.my.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/trojan
+    headers:
+      Host: vps.barokahnet.my.id
+# ===============================================
+- name: VLESS Non TLS WSS 
+  server: 172.67.5.14
+  port: 80
+  type: vless
+  uuid: b3de26e8-xxxxxxxxxxxxxxxxxxxxxxx
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: vps.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vless
+    headers:
+      Host: vps.barokahnet.my.id
+# ===============================================
+- name: VLESS TLS WSS
+  type: vless
+  server: 172.67.5.14
+  port: 443
+  uuid: b3de26e8-xxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: vps.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vless
+    headers:
+      Host: vps.barokahnet.my.id
+#=================================================
+- name: VMESS Non TLS WSS
+  type: vmess
+  server: 172.67.5.14
+  port: 80
+  uuid: e504b3a5-xxxxxxxxxxxxxxxxxxxxxxxc
+  alterId: 0
+  cipher: auto
+  udp: false
+  skip-cert-verify: true
+  tls: false
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vmess
+    headers:
+      Host: vps.barokahnet.my.id
+# =====================================
+- name: VMESS TLS WSS
+  type: vmess
+  server: 172.67.5.14
+  port: 443
+  uuid: e504b3a5-xxxxxxxxxxxxxxxxxxxxxxx
+  alterId: 0
+  cipher: auto
+  udp: false
+  skip-cert-verify: true
+  tls: true
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vmess
+    headers:
+      Host: vps.barokahnet.my.id
+# =====================================
+- name: SG WILCARD WSS
+  type: vless
+  server: 172.67.5.14
+  port: 443
+  uuid: xxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: 172.67.5.14.vps.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vless
+    headers:
+      Host: 172.67.5.14.vps.barokahnet.my.id
+#==============================================
+- name: IDC WILCARD WSS
+  type: vless
+  server: 172.67.5.14
+  port: 443
+  uuid: xxxxxxxxxxxxxxxxxxxxxxx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: 172.67.5.14.vps.barokahnet.my.id
+  network: ws
+  ws-opts:
+    path: wss://172.67.5.14/vless
+    headers:
+      Host: 172.67.5.14.vps.barokahnet.my.id
+#==============================================
