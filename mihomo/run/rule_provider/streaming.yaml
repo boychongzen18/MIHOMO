@@ -1,3 +1,4 @@
+# RULES CONFIG Boychongzen aka Xroot
 payload:
   # Google
   - DOMAIN-SUFFIX,googleapis.com
