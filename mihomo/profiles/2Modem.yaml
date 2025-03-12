@@ -1,0 +1,166 @@
+---
+proxy-providers:
+  "░▒▓█ SI BAYU █▓▒░":
+    type: file
+    path: "./proxy_provider/wc-ilped.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10
+  "░▒▓█ SI BIRU █▓▒░":
+    type: file
+    path: "./proxy_provider/wc-fb.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10
+proxy-groups:
+- name: "\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    ▂ ▁\U0001F30E"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - "░▒▓█ SI BAYU █▓▒░"
+  - "░▒▓█ SI BIRU █▓▒░"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+- name: "\U0001F6AB░▒▓█ \U0001D539\U0001D55D\U0001D560\U0001D554\U0001D55C \U0001D540\U0001D55C\U0001D55D\U0001D552\U0001D55F
+    █▓▒░\U0001F6AB"
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  use:
+  - "░▒▓█ SI BAYU █▓▒░"
+  - "░▒▓█ SI BIRU █▓▒░"
+- name: "░▒▓█ ORBIT █▓▒░"
+  type: url-test
+  disable-udp: false
+  proxies:
+  - "\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    ▂ ▁\U0001F30E"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: "░▒▓█ E5577 █▓▒░"
+  type: url-test
+  disable-udp: false
+  proxies:
+  - "\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    ▂ ▁\U0001F30E"
+  url: http://www.gstatic.com/generate_204
+  interval: '10'
+  tolerance: '10'
+- name: "▄︻デSTREAMINGデ══━一"
+  type: select
+  disable-udp: false
+  proxies:
+  - "░▒▓█ E5577 █▓▒░"
+- name: "▄︻デSOSMEDデ══━一"
+  type: select
+  disable-udp: false
+  proxies:
+  - "░▒▓█ E5577 █▓▒░"
+- name: "▄︻デBANGKINGデ══━一\U0001F4F1"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░▒▓█ E5577 █▓▒░"
+- name: "▄︻デALL GAMESデ══━一 \U0001F48E"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░▒▓█ E5577 █▓▒░"
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+unified-delay: true
+external-controller: 0.0.0.0:1080
+secret: RULES
+bind-address: "*"
+external-ui: "/usr/share/openclash/ui"
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+  - dhcp://"wwan0"
+  - dhcp://"eth0.200"
+  - dhcp://"eth1"
+  - 192.168.9.1
+  - 192.168.8.1
+  - 192.168.7.1
+  default-nameserver:
+  - 192.168.9.1
+  - 192.168.8.1
+  - 192.168.7.1
+ipv6: false
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+  - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+rules:
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- MATCH,GLOBAL
+rule-providers:
+  Reject:
+    type: file
+    behavior: classical
+    path: "./rule_provider/Reject.yaml"
+  Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/Direct.yaml"
+  STREAMING:
+    type: http
+    behavior: classical
+    path: "./rule_provider/STREAMING.yaml"
+    format: yaml
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Streaming.yaml
+    interval: 100
+  SOSMED:
+    type: http
+    behavior: classical
+    path: "./rule_provider/SOSMED.yaml"
+    format: yaml
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Sosmed.yaml
+    interval: 10
+  BANGKING:
+    type: http
+    behavior: domain
+    path: "./rule_provider/BANGKING.yaml"
+    format: yaml
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Ewallet.yaml
+    interval: 100
+  ALL GAMES:
+    type: http
+    behavior: domain
+    path: "./rule_provider/ALL GAMES.yaml"
+    format: yaml
+    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Games.yaml
+    interval: 100
+keep-alive-interval: 15
+keep-alive-idle: 600
+geodata-loader: memconservative
+find-process-mode: 'off'
