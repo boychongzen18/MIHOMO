@@ -7,7 +7,7 @@ payload:
   - DOMAIN-SUFFIX,rocksdb.org
   - DOMAIN-SUFFIX,whatsapp.com
   - DOMAIN-SUFFIX,whatsapp.net
-  - DOMAIN-SUFFIX,wa.me
+  - DOMAIN-SUFFIX,web.whatsapp.com
   - DOMAIN-SUFFIX,whatsapp-plus.info
   - DOMAIN-SUFFIX,whatsapp-plus.me
   - DOMAIN-SUFFIX,whatsapp-plus.net
