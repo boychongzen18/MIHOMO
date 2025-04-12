@@ -1,0 +1,14 @@
+# RULES CONFIG Boychongzen aka Xroot
+payload:
+  # Mobile Legends
+  - DOMAIN-SUFFIX,mobilelegends.com
+  - DOMAIN-SUFFIX,mobile.legends
+  - DOMAIN-SUFFIX,mobile-legends.net
+  - DOMAIN-SUFFIX,sl-reverse.com
+  - DOMAIN-SUFFIX,akamaitechnologies.com
+  - DOMAIN-SUFFIX,youngjoygame.com
+  - DOMAIN-SUFFIX,yuanzhapp.com
+  - DOMAIN-SUFFIX,aihelp.net
+  - DOMAIN-SUFFIX,adjust.net.in
+
+

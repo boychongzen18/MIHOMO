@@ -1,0 +1,7 @@
+# RULES CONFIG Boychongzen aka Xroot
+payload:
+  # Instagram
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,instagram.com
+
+
