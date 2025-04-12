@@ -1,0 +1,87 @@
+---
+proxy-providers:
+  "░A░k░u░n░ ░P░r░e░m░i░u░m░":
+    type: file
+    path: "./proxy_provider/vmess.yaml"
+    health-check:
+      enable: false
+      url: http://cp.cloudflare.com/generate_204
+      interval: 10
+proxy-groups:
+- name: "▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    ▂ ▁"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+  url: http://cp.cloudflare.com/generate_204
+  interval: '10'
+- name: "░▒▓█ YOUTUBE █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+unified-delay: true
+external-controller: 0.0.0.0:1080
+secret: RULES
+bind-address: "*"
+external-ui: "/usr/share/openclash/ui"
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  nameserver:
+  - 192.168.9.1
+  - 192.168.8.1
+  - 192.168.7.1
+  - dhcp://"wwan0"
+  - dhcp://"eth1"
+  - 192.168.9.1
+  default-nameserver:
+  - 192.168.9.1
+  - 192.168.8.1
+  - 192.168.7.1
+  fake-ip-range: 198.18.0.1/16
+ipv6: false
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+  - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+rules:
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- MATCH,GLOBAL
+rule-providers:
+  Reject:
+    type: file
+    behavior: classical
+    path: "./rule_provider/Reject.yaml"
+  Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/Direct.yaml"
+keep-alive-interval: 15
+keep-alive-idle: 600
+geodata-loader: memconservative
+find-process-mode: 'off'
