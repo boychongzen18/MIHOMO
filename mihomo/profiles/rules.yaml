@@ -1,63 +1,75 @@
 ---
 proxy-providers:
-  "░▒▓█ ALL COMBO █▓▒░":
+  "â–‘â–’â–“â–ˆ TROJAN WS â–ˆâ–“â–’â–‘":
     type: file
-    path: "./proxy_provider/wss-vision.yaml"
+    path: "./proxy_provider/trojan.yaml"
     health-check:
       enable: true
-      url: http://www.gstatic.com/generate_204
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "â–‘â–’â–“â–ˆ GRPC â–ˆâ–“â–’â–‘":
+    type: file
+    path: "./proxy_provider/grpc.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "â–‘â–’â–“â–ˆ VLESS â–ˆâ–“â–’â–‘":
+    type: file
+    path: "./proxy_provider/vless.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "â–‘â–’â–“â–ˆ VMESS â–ˆâ–“â–’â–‘":
+    type: file
+    path: "./proxy_provider/vmess.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
       interval: 10
 proxy-groups:
-- name: "\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-    ▂ ▁\U0001F30E"
+- name: "â–‘Aâ–‘kâ–‘uâ–‘nâ–‘ â–‘Pâ–‘râ–‘eâ–‘mâ–‘iâ–‘uâ–‘mâ–‘"
   type: load-balance
   strategy: round-robin
   disable-udp: false
   use:
-  - "░▒▓█ ALL COMBO █▓▒░"
-  url: http://www.gstatic.com/generate_204
+  - "â–‘â–’â–“â–ˆ TROJAN WS â–ˆâ–“â–’â–‘"
+  - "â–‘â–’â–“â–ˆ GRPC â–ˆâ–“â–’â–‘"
+  - "â–‘â–’â–“â–ˆ VLESS â–ˆâ–“â–’â–‘"
+  - "â–‘â–’â–“â–ˆ VMESS â–ˆâ–“â–’â–‘"
+  url: https://cp.cloudflare.com/generate_204
   interval: '10'
-- name: "\U0001F6AB░▒▓█ \U0001D539\U0001D55D\U0001D560\U0001D554\U0001D55C \U0001D540\U0001D55C\U0001D55D\U0001D552\U0001D55F
-    █▓▒░\U0001F6AB"
-  type: select
-  disable-udp: false
-  proxies:
-  - REJECT
-  use:
-  - "░▒▓█ ALL COMBO █▓▒░"
-- name: "░▒▓█ SI BIRU █▓▒░"
-  type: url-test
-  disable-udp: false
-  proxies:
-  - "\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-    ▂ ▁\U0001F30E"
-  url: http://www.gstatic.com/generate_204
-  interval: '10'
-  tolerance: '10'
-- name: "▄︻デSTREAMINGデ══━一"
+- name: "â–‘â–’â–“â–ˆ Youtube â–ˆâ–“â–’â–‘"
   type: select
   disable-udp: false
   proxies:
   - DIRECT
-  - "░▒▓█ SI BIRU █▓▒░"
-- name: "▄︻デSOSMEDデ══━一"
+- name: "â–‘â–’â–“â–ˆ Facebook â–ˆâ–“â–’â–‘"
   type: select
   disable-udp: false
   proxies:
   - DIRECT
-  - "░▒▓█ SI BIRU █▓▒░"
-- name: "▄︻デALL GAMESデ══━一 \U0001F48E"
+- name: "â–‘â–’â–“â–ˆ Instagram â–ˆâ–“â–’â–‘"
   type: select
   disable-udp: false
   proxies:
   - DIRECT
-  - "░▒▓█ SI BIRU █▓▒░"
-- name: "▄︻デBANGKINGデ══━一 \U0001F48E"
+- name: "â–‘â–’â–“â–ˆ Whatsapp â–ˆâ–“â–’â–‘"
   type: select
   disable-udp: false
   proxies:
   - DIRECT
-  - "░▒▓█ SI BIRU █▓▒░"
+- name: "â–‘â–’â–“â–ˆ FreeFire â–ˆâ–“â–’â–‘"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+- name: "â–‘â–’â–“â–ˆ MobileLegends â–ˆâ–“â–’â–‘"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
 redir-port: 7892
 tproxy-port: 7895
 port: 7890
@@ -74,41 +86,35 @@ external-ui: "/usr/share/openclash/ui"
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
   nameserver:
   - 192.168.8.1
-  - 192.168.7.1
-  - dhcp://"oldeth1"
-  - dhcp://"wwan0"
   - dhcp://"eth1"
   default-nameserver:
   - 192.168.8.1
-  - 192.168.7.1
+  fake-ip-range: 198.18.0.1/16
 ipv6: false
 tun:
   enable: true
   stack: system
   device: utun
-  dns-hijack:
-  - 127.0.0.1:53
-  endpoint-independent-nat: true
   auto-route: false
   auto-detect-interface: false
-  auto-redirect: false
-  strict-route: false
+  dns-hijack:
+  - tcp://any:53
 profile:
   store-selected: true
-  store-fake-ip: true
 rules:
-- "RULE-SET,STREAMING,\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-  ▂ ▁\U0001F30E"
-- "RULE-SET,SOSMED,\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-  ▂ ▁\U0001F30E"
-- "RULE-SET,BANGKING,\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-  ▂ ▁\U0001F30E"
-- "RULE-SET,ALL GAMES,\U0001F30E▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
-  ▂ ▁\U0001F30E"
+- DST-PORT,7895,REJECT
+- DST-PORT,7892,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,â–‘â–’â–“â–ˆ Youtube â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ Youtube â–ˆâ–“â–’â–‘
+- RULE-SET,â–‘â–’â–“â–ˆ Facebook â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ Facebook â–ˆâ–“â–’â–‘
+- RULE-SET,â–‘â–’â–“â–ˆ Instagram â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ Instagram â–ˆâ–“â–’â–‘
+- RULE-SET,â–‘â–’â–“â–ˆ Whatsapp â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ Whatsapp â–ˆâ–“â–’â–‘
+- RULE-SET,â–‘â–’â–“â–ˆ FreeFire â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ FreeFire â–ˆâ–“â–’â–‘
+- RULE-SET,â–‘â–’â–“â–ˆ MobileLegends â–ˆâ–“â–’â–‘,â–‘â–’â–“â–ˆ MobileLegends â–ˆâ–“â–’â–‘
 - RULE-SET,Direct,DIRECT
 - RULE-SET,Reject,REJECT
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
@@ -117,40 +123,42 @@ rule-providers:
   Reject:
     type: file
     behavior: classical
-    path: "./rule_provider/Reject.yaml"
+    path: "./rule_provider/reject.yaml"
   Direct:
     type: file
     behavior: classical
-    path: "./rule_provider/Direct.yaml"
-  STREAMING:
-    type: http
-    behavior: domain
-    path: "./rule_provider/STREAMING.yaml"
+    path: "./rule_provider/direct.yaml"
+  "â–‘â–’â–“â–ˆ Youtube â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/Youtube.yaml"
     format: yaml
-    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Streaming.yaml
-    interval: 100
-  SOSMED:
-    type: http
-    behavior: domain
-    path: "./rule_provider/SOSMED.yaml"
+  "â–‘â–’â–“â–ˆ Facebook â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/Facebook.yaml"
     format: yaml
-    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Sosmed.yaml
-    interval: 10
-  BANGKING:
-    type: http
-    behavior: domain
-    path: "./rule_provider/BANGKING.yaml"
+  "â–‘â–’â–“â–ˆ Instagram â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/Instagram.yaml"
     format: yaml
-    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Ewallet.yaml
-    interval: 100
-  ALL GAMES:
-    type: http
-    behavior: domain
-    path: "./rule_provider/ALL GAMES.yaml"
+  "â–‘â–’â–“â–ˆ Whatsapp â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/Whatsapp.yaml"
     format: yaml
-    url: https://raw.githubusercontent.com/boychongzen18/MIHOMO/refs/heads/main/mihomo/run/rule_provider/Games.yaml
-    interval: 100
-keep-alive-interval: 15
-keep-alive-idle: 600
+  "â–‘â–’â–“â–ˆ FreeFire â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/FreeFire.yaml"
+    format: yaml
+  "â–‘â–’â–“â–ˆ MobileLegends â–ˆâ–“â–’â–‘":
+    type: file
+    behavior: classical
+    path: "./rule_provider/MobileLegends.yaml"
+    format: yaml
 geodata-loader: memconservative
 find-process-mode: 'off'
+authentication:
+- Clash:oHeRh67o
