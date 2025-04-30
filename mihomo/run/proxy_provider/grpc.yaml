@@ -1,0 +1,29 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost XL ALL COMBO  <-##
+# ===============================================
+- name: GRPC-IDC TURBO SUPER LINE
+  type: trojan
+  server: df.game.naver.com
+  port: 443
+  password: tj_xx
+  udp: true
+  sni: zakyid3.dklongtong.xyz
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: Trojan-GRPC
+# ===============================================
+- name: GRPC-IDC TURBO SUPER FB
+  type: trojan
+  server: investor.fb.com
+  port: 443
+  password: tj_xx
+  udp: true
+  sni: zakyid3.dklongtong.xyz
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: Trojan-GRPC
+# ===============================================

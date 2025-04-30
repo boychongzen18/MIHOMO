@@ -1,0 +1,37 @@
+# RAKITAN CONFIG Boychongzen aka Xroot
+proxies:
+# ===============================================
+   ##-> RAKITAN BugHost XL ALL COMBO  <-##
+# ===============================================
+- name: VL-443 TURBO SUPER LINE
+  type: vless
+  server: df.game.naver.com
+  port: 443
+  uuid: vl_xx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: zakyid3.dklongtong.xyz
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: zakyid3.dklongtong.xyz
+#==============================================
+- name: VL-443 TURBO SUPER FB
+  type: vless
+  server: investor.fb.com
+  port: 443
+  uuid: vl_xx
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: zakyid3.dklongtong.xyz
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: zakyid3.dklongtong.xyz
+#==============================================
+
+
