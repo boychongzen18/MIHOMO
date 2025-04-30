@@ -1,36 +1,33 @@
 # RAKITAN CONFIG Boychongzen aka Xroot
 proxies:
 # ===============================================
-     ##-> RAKITAN BugHost ALL OPSEL  <-##
+   ##-> RAKITAN BugHost XL ALL COMBO  <-##
 # ===============================================
-- name: OPOK WILCARD Vless
-  type: vless
-  server: 162.159.128.79
+- name: TJ-IDC TURBO SUPER SATU
+  type: trojan
+  server: BUGHOST.com
   port: 443
-  uuid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  password: tj_XXXX
   udp: true
+  sni: akun-server.com
   skip-cert-verify: true
-  tls: true
-  servername: bughost.com.barokahnet.my.id
   network: ws
   ws-opts:
-    path: /vless
+    path: /trojan
     headers:
-      Host: bughost.com.barokahnet.my.id
-#==============================================
-- name: INDO 
-  server: 104.28.13.80
+      Host: akun-server.com
+# ===============================================
+- name: TJ-IDC TURBO SUPER DUA
+  type: trojan
+  server: BUGHOST.com
   port: 443
-  type: vmess
-  uuid: ab35701f-d9b5-4c48-ab4e-e1af5c0b36be
-  alterId: 0
-  cipher: auto
-  tls: true
+  password: tj_XXXX
+  udp: true
+  sni: akun-server.com
   skip-cert-verify: true
-  servername: akunnya 
   network: ws
   ws-opts:
-    path: /vmessws
+    path: /trojan
     headers:
-      Host: akunnya 
- #==============================================     
+      Host: akun-server.com
+# ===============================================
