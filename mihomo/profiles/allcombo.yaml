@@ -1,0 +1,206 @@
+---
+proxy-providers:
+  "░▒▓█ TROJAN WS █▓▒░":
+    type: file
+    path: "./proxy_provider/trojan.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "░▒▓█ GRPC █▓▒░":
+    type: file
+    path: "./proxy_provider/grpc.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "░▒▓█ VLESS █▓▒░":
+    type: file
+    path: "./proxy_provider/vless.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "░▒▓█ VMESS █▓▒░":
+    type: file
+    path: "./proxy_provider/vmess.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+proxy-groups:
+- name: "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - "░▒▓█ TROJAN WS █▓▒░"
+  - "░▒▓█ GRPC █▓▒░"
+  - "░▒▓█ VLESS █▓▒░"
+  - "░▒▓█ VMESS █▓▒░"
+  url: https://cp.cloudflare.com/generate_204
+  interval: '10'
+- name: "░▒▓█ Youtube █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ Facebook █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ Instagram █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ Whatsapp █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ FreeFire █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ MobileLegends █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ Tiktok █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ E-Wallet █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+- name: "░▒▓█ Block Site █▓▒░"
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - "░A░k░u░n░ ░P░r░e░m░i░u░m░"
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+log-level: silent
+allow-lan: true
+unified-delay: true
+external-controller: 0.0.0.0:1080
+secret: BarokahNET
+bind-address: "*"
+external-ui: "/etc/mihomo/run/ui"
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  nameserver:
+  - 192.168.8.1
+  - dhcp://"eth1"
+  default-nameserver:
+  - 192.168.8.1
+  fake-ip-range: 198.18.0.1/16
+ipv6: false
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+  - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
+profile:
+  store-selected: true
+rules:
+- RULE-SET,░▒▓█ Youtube █▓▒░,░▒▓█ Youtube █▓▒░
+- RULE-SET,░▒▓█ Facebook █▓▒░,░▒▓█ Facebook █▓▒░
+- RULE-SET,░▒▓█ Instagram █▓▒░,░▒▓█ Instagram █▓▒░
+- RULE-SET,░▒▓█ Whatsapp █▓▒░,░▒▓█ Whatsapp █▓▒░
+- RULE-SET,░▒▓█ FreeFire █▓▒░,░▒▓█ FreeFire █▓▒░
+- RULE-SET,░▒▓█ MobileLegends █▓▒░,░▒▓█ MobileLegends █▓▒░
+- RULE-SET,░▒▓█ Tiktok █▓▒░,░▒▓█ Tiktok █▓▒░
+- RULE-SET,░▒▓█ E-Wallet █▓▒░,░▒▓█ E-Wallet █▓▒░
+- RULE-SET,░▒▓█ Block Site █▓▒░,░▒▓█ Block Site █▓▒░
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- MATCH,GLOBAL
+rule-providers:
+  Reject:
+    type: file
+    behavior: classical
+    path: "./rule_provider/reject.yaml"
+  Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/direct.yaml"
+  "░▒▓█ Youtube █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Youtube █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ Facebook █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Facebook █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ Instagram █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Instagram █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ Whatsapp █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Whatsapp █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ FreeFire █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ FreeFire █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ MobileLegends █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ MobileLegends █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ Tiktok █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Tiktok █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ E-Wallet █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ E-Wallet █▓▒░.yaml"
+    format: yaml
+  "░▒▓█ Block Site █▓▒░":
+    type: file
+    behavior: classical
+    path: "./rule_provider/░▒▓█ Block Site █▓▒░.yaml"
+    format: yaml
+keep-alive-interval: 15
+keep-alive-idle: 600
+geodata-loader: memconservative
+find-process-mode: 'off'
