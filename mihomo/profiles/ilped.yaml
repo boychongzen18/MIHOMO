@@ -1,0 +1,100 @@
+---
+proxy-providers:
+  "░▒▓█ GRPC WS █▓▒░":
+    type: file
+    path: "./proxy_provider/grpc.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+  "░▒▓█ TROJAN WS █▓▒░":
+    type: file
+    path: "./proxy_provider/trojan.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 10
+proxy-groups:
+- name: "▁ ▂ \U0001D4AF\U0001D4B0\U0001D4A9\U0001D438\U0001D43F\U0001D43F\U0001D43C\U0001D4A9\U0001D4A2
+    ▂ ▁"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  use:
+  - "░▒▓█ GRPC WS █▓▒░"
+  - "░▒▓█ TROJAN WS █▓▒░"
+  url: https://cp.cloudflare.com/generate_204
+  interval: '10'
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:7874
+  nameserver:
+  - dhcp://"eth1"
+  - 192.168.8.1
+  - 114.114.114.114
+  - 119.29.29.29
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  default-nameserver:
+  - 192.168.8.1
+  - 114.114.114.114
+  - 119.29.29.29
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: global
+allow-lan: true
+external-controller: 0.0.0.0:1080
+secret: BarokahNET
+bind-address: "*"
+external-ui: "/etc/mihomo/run/ui"
+keep-alive-interval: 15
+keep-alive-idle: 600
+ipv6: false
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+      - 443
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+  force-domain:
+  - "+.netflix.com"
+  - "+.nflxvideo.net"
+  - "+.amazonaws.com"
+  - "+.media.dssott.com"
+  skip-domain:
+  - "+.apple.com"
+  - Mijia Cloud
+  - dlg.io.mi.com
+  - "+.oray.com"
+  - "+.sunlogin.net"
+  - "+.push.apple.com"
+  parse-pure-ip: true
+tun:
+  enable: true
+  stack: system
+  device: utun
+  dns-hijack:
+  - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
+profile:
+  store-selected: true
