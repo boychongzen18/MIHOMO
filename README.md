@@ -6,6 +6,7 @@
 ![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/MIHOMO.jpg)
 #  Tampilan akun
 ![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/mihomo.jpg)
+![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/metacube.jpg)
 
 
 
