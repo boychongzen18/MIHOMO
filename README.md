@@ -4,10 +4,11 @@
 
 #  Menu Mihomo
 ![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/MIHOMO.jpg)
-#  Tampilan akun
+#  Tampilan akun 
 ![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/mihomo.jpg)
-![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/metacube.jpg)
-
+#  Tampilan METACUBE
+![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/cube.jpg)
+![be](https://raw.githubusercontent.com/boychongzen18/mihomo/refs/heads/main/cube1.jpg)
 
 
 My Facebok    : https://web.facebook.com/xroot.xroot.7
